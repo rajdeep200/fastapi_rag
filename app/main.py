@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
 from app.routers import users
-from app.database.connection import Base, engine
+# from app.database.connection import Base, engine
 
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="FastAPI mastery",
