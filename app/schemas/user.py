@@ -6,6 +6,19 @@ class UserCreate(BaseModel):
     age: int = Field(ge=15, le=100)
     password: str = Field(min_length=8)
     
+class UserUpdate(BaseModel):
+    name: str|None = Field(
+        default=None,
+        min_length=2,
+        max_length=20
+    )
+    email: str|None = None
+    age: int|None = Field(
+        default=None,
+        gt=18,
+        lt=100
+    )
+    
 class UserResponse(BaseModel):
     id: int
     name: str
