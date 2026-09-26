@@ -20,7 +20,7 @@ class User(Base):
         index=True
     )
     
-    password: Mapped[str] = mapped_column(String(255), nullable=False)
+    hashed_password: Mapped[str] = mapped_column(nullable=False)
     
     age: Mapped[int] = mapped_column(Integer, nullable=False)
     

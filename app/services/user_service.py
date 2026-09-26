@@ -6,6 +6,7 @@ from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
+from app.security import hash_password
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +26,7 @@ def create_user(user_data: UserCreate, db: Session):
         name = user_data.name,
         email = user_data.email,
         age = user_data.age,
-        password = user_data.password
+        hashed_password = hash_password(user_data.password)
     )
     
     db.add(user)
