@@ -30,7 +30,7 @@ class Document(Base):
     content_type: Mapped[str] = mapped_column(String(100))
     error_message: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), server_default=func.now()
+        DateTime(timezone=True), server_default=func.now() 
     )
     pages: Mapped[list["DocumentPage"]] = relationship(
         back_populates="document",
