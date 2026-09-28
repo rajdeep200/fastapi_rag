@@ -12,3 +12,4 @@ venv/
 
 # VS Code workspace settings
 .vscode/
+/uploads
